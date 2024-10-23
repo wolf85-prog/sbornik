@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "react_native_sbornik2",
-    "slug": "react_native_sbornik2",
+    "name": "Сборник",
+    "slug": "sbornik",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "sbornik",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",

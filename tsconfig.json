@@ -9,9 +9,18 @@
     }
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    ".expo/types/**/*.js",
+    "expo-env.d.js",
+    "app/(tabs)/explore.jsx",
+    "app/(tabs)/_layout.jsx",
+    "app/+not-found.jsx",
+    "app/+html.jsx",
+    "app/_layout.jsx",
+    "app/(tabs)/index.jsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts",
+    "nativewind-env.d.ts"
   ]
 }
