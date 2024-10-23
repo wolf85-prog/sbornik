@@ -36,7 +36,7 @@ export default function App() {
         <Stack.Screen name="+not-found" />
       </Stack> */}
       <View className="flex-1 items-center justify-center bg-white">
-       <Text className="text-3xl text-center">Майкопский молодежный сборник</Text>
+       <Text className="text-3xl text-center font-pblack">Майкопский молодежный сборник</Text>
        <StatusBar style='auto' />
        <Link href="/profile" style={{color: 'blue'}}>Перейти в Профиль</Link>
       </View>
