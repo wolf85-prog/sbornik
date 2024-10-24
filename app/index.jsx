@@ -38,7 +38,7 @@ export default function App() {
       <View className="flex-1 items-center justify-center bg-white">
        <Text className="text-3xl text-center font-pblack">Майкопский молодежный сборник</Text>
        <StatusBar style='auto' />
-       <Link href="/profile" style={{color: 'blue'}}>Перейти в Профиль</Link>
+       <Link href="/explore" style={{color: 'blue'}}>Перейти в Профиль</Link>
       </View>
     </ThemeProvider>
   );
