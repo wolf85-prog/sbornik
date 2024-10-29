@@ -13,7 +13,6 @@
     "**/*.jsx",
     ".expo/types/**/*.js",
     "expo-env.d.js",
-    "app/(tabs)/explore.jsx",
     "app/(tabs)/_layout.jsx",
     "app/+not-found.jsx",
     "app/+html.jsx",
