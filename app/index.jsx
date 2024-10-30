@@ -1,20 +1,23 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Stack, Link } from 'expo-router';
+import { StatusBar } from "expo-status-bar";
+import { Redirect, router } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import 'react-native-reanimated';
-import {Text, View} from 'react-native';
-import "../global.css";// Import your global CSS file
+import {Image, Text, View, ScrollView} from 'react-native';
+import { SafeAreaView } from 'react-native';
+import "../global.css"; // Import your global CSS file
+import { images } from "../constants";
 
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { StatusBar } from 'expo-status-bar';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const colorScheme = useColorScheme();
+  const [load, setLoad] = useState(true)
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
@@ -29,17 +32,43 @@ export default function App() {
     return null;
   }
 
+  //-------------------------------
+
+  useEffect(() => {
+    setTimeout(()=> {
+      setLoad(false)
+    }, 3000)
+  },[])
+
+  if (!load) return <Redirect href="/home" />;
+
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       {/* <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack> */}
-      <View className="flex-1 items-center justify-center bg-white">
-       <Text className="text-3xl text-center font-pblack">Майкопский молодежный сборник</Text>
-       <StatusBar style='auto' />
-       <Link href="/index" style={{color: 'blue'}}>Перейти в Профиль</Link>
-      </View>
+      
+      <SafeAreaView className="bg-primary h-full">
+        <ScrollView
+          contentContainerStyle={{
+            height: "100%",
+          }}
+        >
+          <View className="w-full flex justify-center items-center h-full px-4">
+            <Image
+              source={images.logo}
+              className="w-[130px] h-[84px]"
+              resizeMode="contain"
+              onClick={() => router.push('/home')}
+              //onPress={() => navigation.push('/home')}
+            />
+          </View>
+        </ScrollView>
+
+        <StatusBar backgroundColor="#161622" style="light" />
+      </SafeAreaView>
+
     </ThemeProvider>
   );
 }

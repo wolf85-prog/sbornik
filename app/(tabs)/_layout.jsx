@@ -1,10 +1,12 @@
-import { Tabs } from 'expo-router';
+import { Tabs, Redirect } from 'expo-router';
 import React from 'react';
+import {View, Text, Image} from 'react-native'
 
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { icons } from "../../constants";
+import "../../global.css"; 
 
 const TabIcon = ({ icon, color, name, focused }) => {
   return (
@@ -14,10 +16,11 @@ const TabIcon = ({ icon, color, name, focused }) => {
         resizeMode="contain"
         tintColor={color}
         className="w-6 h-6"
+        style={{height: '25px', width: '25px'}}
       />
       <Text
         className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`}
-        style={{ color: color }}
+        style={{ color: color, fontSize: '12px' }}
       >
         {name}
       </Text>
@@ -42,14 +45,16 @@ const TabLayout = () => {
         },
       }}>
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
           title: 'Главная',
+          headerShown: false,
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon 
+            <TabIcon 
               icon={icons.home}
-              name={focused ? 'code-slash' : 'code-slash-outline'} 
               color={color} 
+              name="Главная"
+              focused={focused}
             />
           ),
         }}
@@ -58,11 +63,13 @@ const TabLayout = () => {
         name="songs"
         options={{
           title: 'Песни',
+          headerShown: false,
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon 
+            <TabIcon 
               icon={icons.profile}
-              name={focused ? 'code-slash' : 'code-slash-outline'} 
               color={color} 
+              name="Песни"
+              focused={focused}
             />
           ),
         }}
@@ -71,11 +78,13 @@ const TabLayout = () => {
         name="playlists"
         options={{
           title: 'Плейлисты',
+          headerShown: false,
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon 
-              icon={icons.profile}
-              name={focused ? 'code-slash' : 'code-slash-outline'} 
+            <TabIcon 
+              icon={icons.eye}
               color={color} 
+              name="Плейлисты"
+              focused={focused}
             />
           ),
         }}
@@ -84,11 +93,13 @@ const TabLayout = () => {
         name="favorite"
         options={{
           title: 'Избранное',
+          headerShown: false,
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon 
+            <TabIcon 
               icon={icons.bookmark}
-              name={focused ? 'code-slash' : 'code-slash-outline'} 
               color={color} 
+              name="Избранное"
+              focused={focused}
             />
           ),
         }}
@@ -97,11 +108,13 @@ const TabLayout = () => {
         name="notes"
         options={{
           title: 'Заметки',
+          headerShown: false,
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon 
-              icon={icons.bookmark}
-              name={focused ? 'code-slash' : 'code-slash-outline'} 
+            <TabIcon 
+              icon={icons.profile}
               color={color} 
+              name="Заметки"
+              focused={focused}
             />
           ),
         }}
