@@ -9,6 +9,8 @@ import { images } from "../../constants";
 
 import SearchInput from "../../components/SearchInput";
 
+//import { openDatabase } from 'react-native-sqlite-storage';
+
 export default function HomeScreen() {
   const [refreshing, setRefreshing] = useState(false);
 
@@ -23,6 +25,8 @@ export default function HomeScreen() {
   // and horizontal flatlist
 
   //  we cannot do that with just scrollview as there's both horizontal and vertical scroll (two flat lists, within trending)
+
+  //var db = openDatabase({ name: '../../sqlite/sbornik' });
 
   return (
     <SafeAreaView className='bg-primary'>
