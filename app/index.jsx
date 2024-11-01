@@ -5,6 +5,7 @@ import { Redirect, router } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
 import 'react-native-reanimated';
+import 'react-native-gesture-handler';
 import {Image, Text, View, ScrollView} from 'react-native';
 import { SafeAreaView } from 'react-native';
 import "../global.css"; // Import your global CSS file
