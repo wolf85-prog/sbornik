@@ -13,15 +13,22 @@ import { images } from "../constants";
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+//import useDatabase from '@/hooks/useDatabase'
+//import useCachedResources from './../hooks/useCachedResources';
+
+
 
 export default function App() {
+  // Prevent the splash screen from auto-hiding before asset loading is complete.
+  SplashScreen.preventAutoHideAsync(); //don't let the splash screen hide
+
   const colorScheme = useColorScheme();
   const [load, setLoad] = useState(true)
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
+
+  //const isDBLoadingComplete = useDatabase();
 
   useEffect(() => {
     if (loaded) {
