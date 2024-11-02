@@ -13,10 +13,15 @@ import { images } from "../constants";
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
+import * as SQLite from 'expo-sqlite';
+import { FileSystem } from 'expo';
+// import * as FileSystem from 'expo-file-system';
+import { Asset } from 'expo-asset';
+
 //import useDatabase from '@/hooks/useDatabase'
 //import useCachedResources from './../hooks/useCachedResources';
 
-
+const SBORNIK = 'sbornik'
 
 export default function App() {
   // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -27,6 +32,12 @@ export default function App() {
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
+
+
+  const [db, setDb] = useState(SQLite.openDatabase('../sqlite/sbornik'));
+  const [isLoading, setIsLoading] = useState(true);
+  const [names, setNames] = useState([]);
+  const [currentName, setCurrentName] = useState(undefined);
 
   //const isDBLoadingComplete = useDatabase();
 
