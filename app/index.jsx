@@ -11,6 +11,9 @@ import { SafeAreaView } from 'react-native';
 import "../global.css"; // Import your global CSS file
 import { images } from "../constants";
 
+import {DrawerActions, NavigationContainer} from '@react-navigation/native';
+
+
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 import * as SQLite from 'expo-sqlite';
@@ -34,7 +37,7 @@ export default function App() {
   });
 
 
-  const [db, setDb] = useState(SQLite.openDatabase('../sqlite/sbornik'));
+ // const [db, setDb] = useState(SQLite.openDatabase('../sqlite/sbornik'));
   const [isLoading, setIsLoading] = useState(true);
   const [names, setNames] = useState([]);
   const [currentName, setCurrentName] = useState(undefined);
@@ -63,11 +66,18 @@ export default function App() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      {/* <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack> */}
+       {/* <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="+not-found" />
+        </Stack>  */}
       
+      {/* <Stack.Screen
+        name={ROUTES.HOME}
+        component={DrawerNavigator}
+        options={{headerShown: false}}
+      />  */}
+       
+
       <SafeAreaView className="bg-primary h-full">
         <ScrollView
           contentContainerStyle={{
@@ -80,7 +90,6 @@ export default function App() {
               className="w-[130px] h-[84px]"
               resizeMode="contain"
               onClick={() => router.push('/home')}
-              //onPress={() => navigation.push('/home')}
             />
           </View>
         </ScrollView>
@@ -89,6 +98,9 @@ export default function App() {
       </SafeAreaView>
 
     </ThemeProvider>
+
+      
+    
   );
 }
 

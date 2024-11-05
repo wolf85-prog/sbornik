@@ -30,7 +30,7 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView className='bg-primary'>
-      <FlatList
+      {/* <FlatList
         data={[{id: 1}, {id: 2}, {id: 3}]}
         keyExtractor={(item)=> item.$id}
         renderItem={({item}) =>(
@@ -64,7 +64,6 @@ export default function HomeScreen() {
                 Latest Videos
               </Text>
 
-              {/* <Trending posts={latestPosts ?? []} /> */}
             </View>
           </View>
         )}
@@ -77,7 +76,7 @@ export default function HomeScreen() {
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
-      />
+      /> */}
     </SafeAreaView>
   );
 }

@@ -3,10 +3,11 @@ import React from 'react';
 import {View, Text, Image} from 'react-native'
 
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
+import { Colors } from '@/constants/ColorsTheme';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { icons } from "../../constants";
 import "../../global.css"; 
+
 
 const TabIcon = ({ icon, color, name, focused }) => {
   return (
@@ -46,6 +47,7 @@ const TabLayout = () => {
       }}>
       <Tabs.Screen
         name="home"
+        // component={DrawerNavigator}
         options={{
           title: 'Главная',
           headerShown: false,

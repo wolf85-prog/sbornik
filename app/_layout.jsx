@@ -3,6 +3,8 @@ import { SplashScreen, Stack } from 'expo-router'
 import "../global.css";
 import { useFonts } from 'expo-font'
 
+import DrawerNavigator from './../components/navigation/DrawerNavigator';
+
 SplashScreen.preventAutoHideAsync();
 
 
@@ -29,7 +31,11 @@ const RootLayout = () => {
 
   return (
     <Stack>
-      <Stack.Screen name='index' options={{ headerShown: false }} />
+      <Stack.Screen 
+        name='index' 
+        // component={DrawerNavigator}
+        options={{ headerShown: false }} 
+      />
     </Stack>    
   )
 }
