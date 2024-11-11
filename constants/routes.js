@@ -1,5 +1,5 @@
 export default {
-  LOGIN: 'Login',
+  LOGO: 'Logo',
   REGISTER: 'Register',
   FORGOT_PASSWORD: 'Forgot Password',
 

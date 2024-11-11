@@ -13,11 +13,11 @@
     "**/*.jsx",
     ".expo/types/**/*.js",
     "expo-env.d.js",
-    "app/(tabs)/_layout.jsx",
+    "app/(drawer)/(tabs)/_layout.jsx",
     "app/+not-found.jsx",
     "app/+html.jsx",
     "app/_layout.jsx",
-    "app/(tabs)/index.jsx",
+    "app/(drawer)/(tabs)/index.jsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
     "nativewind-env.d.ts"

@@ -1,3 +1,4 @@
+export {default as LogoPage} from './start/LogoPage';
 export {default as SettingsDetail} from './home/SettingsDetail';
 export {default as Settings} from './home/Settings';
 export {default as Home} from './home/Home';

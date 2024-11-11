@@ -5,8 +5,8 @@ import {COLORS, ROUTES} from '../constants';
 import {Home, Wallet, Notifications, Settings} from '../screens';
 import Icon from 'react-native-vector-icons/Ionicons';
 import SettingsNavigator from './SettingsNavigator';
-import CustomTabBarButton from '../components/CustomTabBarButton';
-import CustomTabBar from '../components/CustomTabBar';
+import CustomTabBarButton from '../components/navigation/CustomTabBarButton';
+import CustomTabBar from '../components/navigation/CustomTabBar';
 import {useNavigation} from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
