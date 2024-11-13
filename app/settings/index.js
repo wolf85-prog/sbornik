@@ -2,7 +2,9 @@ import { Text, StyleSheet, View } from "react-native";
 
 export default function Page() {
   return (
-    <View style={styles.container}>
+    <View 
+      style={styles.container}
+    >
       <Text style={{ fontSize: 24 }}>Index page of Settings Drawer</Text>
     </View>
   );
