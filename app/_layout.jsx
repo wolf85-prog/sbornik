@@ -2,6 +2,7 @@ import React from 'react'
 import { Drawer } from 'expo-router/drawer';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import CustomDrawerContent from './../components/navigation/CustomDrawerContent';
+import { Image } from 'react-native'
 import "../global.css";
 
 const RootLayout = () => {
@@ -42,7 +43,8 @@ const RootLayout = () => {
                 drawerLabel: 'Home',
                 title: 'Home',
                 drawerIcon: ({size, color})=>(
-                    <Ionicons name='md-home' size={size} color={color} />
+                    // <Ionicons name='md-home' size={size} color={color} />
+                    <Image source={require('../assets/icons/eye.png')} color={color}  style={{ width: 25, height: 25, }} />
                 )
 
             }}
@@ -53,7 +55,7 @@ const RootLayout = () => {
                 drawerLabel: 'Settings',
                 title: 'Settings',
                 drawerIcon: ({size, color})=>(
-                    <Ionicons name='ios-information-circle' size={size} color={color} />
+                    <Ionicons name="md-checkmark-circle" size={size} color={color} />
                 )
 
             }}

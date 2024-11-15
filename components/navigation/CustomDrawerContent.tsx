@@ -5,6 +5,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useNavigation } from 'expo-router';
 import { DrawerActions } from '@react-navigation/native';
 
+import { images } from "../../constants";
+
 export default function CustomDrawerContent(props:any) {
 
     const {bottom} = useSafeAreaInsets();
@@ -20,6 +22,11 @@ export default function CustomDrawerContent(props:any) {
       <DrawerContentScrollView {...props} scrollEnabled={false}>
         <View style={{padding: 20}}>
             {/* <Image style={{height: 35}} resizeMode='contain' source={require('../../assets/images/logo')} /> */}
+            <Image
+              source={images.logo}
+              className="w-9 h-10"
+              resizeMode="contain"
+            />
         </View>
         <DrawerItemList {...props} />
       </DrawerContentScrollView>
